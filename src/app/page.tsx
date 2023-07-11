@@ -33,9 +33,12 @@ export default function Home() {
       
       return firstNames[firstSeed] + secondNames[secondSeed]
     })
-    console.log(playlistNames);
 
     return playlistNames;
+  }
+
+  function generateCover() {
+    return Math.floor(Math.random() * 6) + 1;
   }
   return (
     <div className="h-screen flex flex-col">
@@ -56,23 +59,23 @@ export default function Home() {
             <h1 className="font-semibold text-3xl mt-6">Good Afternoon</h1>
 
             <div className="grid grid-cols-3 gap-4 mt-4">
-              <Album name={albumsNames[0]} albumCover="/album-cover.jpg" />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
+              <Album name={albumsNames[0]} albumCover={`/album-cover-${generateCover()}.jpg`} />
+              <Album name={albumsNames[1]} albumCover={`/album-cover-${generateCover()}.jpg`} />
+              <Album name={albumsNames[2]} albumCover={`/album-cover-${generateCover()}.jpg`} />
+              <Album name={albumsNames[3]} albumCover={`/album-cover-${generateCover()}.jpg`} />
+              <Album name={albumsNames[4]} albumCover={`/album-cover-${generateCover()}.jpg`} />
+              <Album name={albumsNames[5]} albumCover={`/album-cover-${generateCover()}.jpg`} />
             </div>
 
             <h2 className="font-semibold text-2xl mt-6">Made for you</h2>
 
             <div className="grid grid-cols-5 gap-4 mt-4">
 
-              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover="/album-cover.jpg" />
-              <Playlist />
-              <Playlist />
-              <Playlist />
-              <Playlist />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover={`/playlist-${generateCover()}.jpg`} />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover={`/playlist-${generateCover()}.jpg`} />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover={`/playlist-${generateCover()}.jpg`} />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover={`/playlist-${generateCover()}.jpg`} />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover={`/playlist-${generateCover()}.jpg`} />
 
             </div>
         </main>
