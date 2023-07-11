@@ -5,6 +5,38 @@ import { Sidebar } from "@/components/Sidebar"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function Home() {
+  let albumsNames = generateAlbumName();
+  let playlistsNames = generatePlaylistName();
+
+  function generateAlbumName() {
+    let firstNames = ["Nemesis", "Cherry", "Moonquake", "Dream", "Glass", "Ilusion" ];
+    let secondNames = [" the road", " act", " treasures", " infinity", " feeling", "" ];
+
+    let albumsNames = firstNames.map(albumName => {
+      let firstSeed = Math.floor(Math.random() * 6);
+      let secondSeed = Math.floor(Math.random() * 6);
+
+      return firstNames[firstSeed] + secondNames[secondSeed]
+    })
+
+    return albumsNames;
+  }
+
+  function generatePlaylistName() {
+    let firstNames = ["Daily", "Drive", "Top", "Hits" ];
+    let secondNames = [" Mix 1", " Mix 3", " Eletro", " Sounds", " Brazil", " Sports" ];
+
+    let playlistNames = secondNames.map(playlistName => {
+      let firstSeed = Math.floor(Math.random() * 4);
+      let secondSeed = Math.floor(Math.random() * 6);
+
+      
+      return firstNames[firstSeed] + secondNames[secondSeed]
+    })
+    console.log(playlistNames);
+
+    return playlistNames;
+  }
   return (
     <div className="h-screen flex flex-col">
       <div className="flex flex-1">
@@ -24,7 +56,7 @@ export default function Home() {
             <h1 className="font-semibold text-3xl mt-6">Good Afternoon</h1>
 
             <div className="grid grid-cols-3 gap-4 mt-4">
-              <Album name="Album name" albumCover="/album-cover.jpg" />
+              <Album name={albumsNames[0]} albumCover="/album-cover.jpg" />
               <Album />
               <Album />
               <Album />
@@ -36,7 +68,7 @@ export default function Home() {
 
             <div className="grid grid-cols-5 gap-4 mt-4">
 
-              <Playlist name="Daily Mix 5" about="About the Daily Mix 5" playlistCover="/album-cover.jpg" />
+              <Playlist name={playlistsNames[0]} about={`About the ${playlistsNames[0]} playlist`} playlistCover="/album-cover.jpg" />
               <Playlist />
               <Playlist />
               <Playlist />
