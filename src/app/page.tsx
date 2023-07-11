@@ -48,11 +48,11 @@ export default function Home() {
 
         <main className="flex-1 p-6">
           <div className="flex items-center gap-4">
-            <button className="p-2 rounded-full bg-black/60">
-              <ChevronLeft></ChevronLeft>
+            <button className="p-2 rounded-full bg-black/60" >
+              <ChevronLeft />
             </button>
             <button>
-              <ChevronRight></ChevronRight>
+              <ChevronRight />
             </button>
           </div>
 
